@@ -1,0 +1,97 @@
+{
+    "layer": "top",
+    "margin-top": 10,
+    "width": 1890,
+    "modules-left": ["sway/workspaces", "pulseaudio", "custom/notifications"],
+    "modules-center": ["clock"],
+    "modules-right": ["disk", "custom/trash"],
+    "custom/trash": {
+        "format": "{}",
+        "interval": 1,
+        "convert-archive": true,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/trash.sh",
+        "on-click": "trash-empty -f",
+        "on-click-right": "xdg-open ~/.local/share/Trash/files"
+    },
+    "custom/notifications": {
+        "tooltip": false,
+        "format": "",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></span></sup>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></span></sup>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></span></sup>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></span></sup>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        // Wrapping the command prevents a common waybar click interception bug
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+        "escape": true
+    },
+    "sway/workspaces": {
+        "on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "high-priority-named": [ "1", "2" ],
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        },
+        "sort-by-id": true,
+        "all-outputs": true
+    },
+    "disk": {
+        "interval": 30,
+        "format": "{percentage_used}% "
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    },
+    "clock": {
+        "format": "{:%a %b %d %I:%M %p}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"             : "year",
+            "mode-mon-col"     : 3,
+            "weeks-pos"        : "right",
+            "first-day-of-week": 1,
+            "on-scroll"        : 1,
+            "on-click-right"   : "mode",
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+}

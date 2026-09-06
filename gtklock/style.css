@@ -1,0 +1,19 @@
+window {
+    background-image: url("/home/fray/.config/sway/wallpapers/ryo-yamada-blurred.png");
+    background-color: rgba(20, 20, 20, 0.698);
+}
+
+#entry.focus {
+    padding-top: 20px;
+}
+
+#window-box {
+	padding: 72px 64px ;
+	border-radius: 50px;
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+	background-color: rgba(20, 20, 20, 0.722);
+
+    font-size: 16px;
+    font-family: "MartianMono Nerd Font Propo";
+    color: white;
+}

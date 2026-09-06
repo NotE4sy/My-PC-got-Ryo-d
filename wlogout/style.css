@@ -1,0 +1,44 @@
+* {
+	box-shadow: none;
+}
+
+window {
+	background-image: url("/home/fray/.config/sway/wallpapers/ryo-yamada-blurred.png");
+	background-color: #FFFFFF;
+}
+
+button {
+	background-image: url("/home/fray/.config/sway/wallpapers/ryo-yamada.png");
+	border-radius: 50px;
+}
+
+button {
+	border: transparent;
+	background-color: transparent;
+	margin: 12px;
+	text-decoration-color: #FFFFFF;
+    color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+	border-radius: 50px;
+	transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+	background-color: rgba(120, 152, 234, 0.621);
+	outline-style: none;
+	background-size: 37%;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}

@@ -1,0 +1,36 @@
+window {
+    border: 4px solid #7898ea;
+    border-radius: 10px;
+    background-color: rgba(29, 30, 34, 0.7);
+}
+
+#img {
+    margin-right: 12px;
+    margin-left: 6px;
+}
+
+#input {
+    margin: 12px;
+    border-style: none;
+    font-family: "MartianMono Nerd Font Propo";
+    font-size: 16px;
+}
+
+#inner-box {
+    margin: 0px 12px 12px;
+}
+
+#text {
+    font-family: "MartianMono Nerd Font Propo";
+    font-size: 16px;
+}
+
+#entry {
+    border-radius: 10px;
+    transition: all 0.15s ease-in-out;
+}
+
+#entry:selected {
+    background-color: rgba(120, 152, 234, 0.7);
+    margin-left: 20px;
+}
